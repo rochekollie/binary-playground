@@ -159,6 +159,7 @@ resetButton.addEventListener('click', () => {
 	writeDecimals();
 	const binaryElements = document.querySelectorAll('.binary-digits');
 	binaryElements.forEach(element => element.classList.remove('active'));
+	binaryElements.forEach(element => element.textContent = '0');
 });
 
 
