@@ -156,7 +156,8 @@ const markUserSelection = () => {
 //reload the page when the reset-button is clicked
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', () => {
-	location.reload();
+	//location.reload();
+	writeDecimals();
 });
 
 
