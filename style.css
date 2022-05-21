@@ -8,6 +8,16 @@
 	--color-700: #012606;
 	--color-800: #010d00;
 	--color-900: #000000;
+
+	--dark-100: #888;
+	--dark-200: #777;
+	--dark-300: #666;
+	--dark-400: #555;
+	--dark-500: #444;
+	--dark-600: #333;
+	--dark-700: #222;
+	--dark-800: #111;
+	--dark-900: #000;
 }
 
 body {
@@ -41,10 +51,6 @@ main {
 .binary-digits {
 	color: var(--color-700);
 	font-weight: 400;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	border: solid thin rgb(225, 225, 225);
 	min-width: 50px;
 	min-height: 50px;
@@ -109,7 +115,8 @@ button {
 
 .check-button {
 	border: solid thin rgba(200, 200, 200);
-	background-color: rgba(225, 225, 225);
+	/* background-color: rgba(225, 225, 225); */
+	background-color: transparent;
 }
 
 .check-button:hover,
@@ -170,4 +177,73 @@ table {
 
 table caption {
 	display: none;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: var(--dark-700);
+		color: var(--light-800);
+		color: #ffffff99;
+	}
+
+	.binary-digits {
+		background-color: var(--dark-800);
+		color: rgb(50, 73, 2);
+		/* border: solid thin var(--dark-800); */
+		border: solid thin rgba(154, 205, 50, .2);
+	}
+
+	.binary-digits:hover {
+		background-color: rgb(220, 255, 170);
+		color: #0aa140;
+		border: solid thin var(--dark-900);
+	}
+
+	.binary-digits:focus{
+		border: solid 1px rgb(220, 255, 170);
+		outline: solid 1px rgb(220, 255, 170);
+	}
+
+	.active {
+		background-color: yellowgreen;
+		color: var(--color-900);
+		color: #000000;
+	}
+
+	.decimal-numbers,
+	.place-values {
+		color: yellowgreen;
+	}
+
+	.check-button {
+		border: solid thin #11111199;
+		border: solid thin rgba(154, 205, 50, .2);
+		background-color: var(--dark-900);
+		background-color: #11111199;
+		color: #0aa14099;
+		color: yellowgreen;
+	}
+
+	.check-button:hover{
+		background-color: yellowgreen;
+		color: var(--dark-900);
+		border: solid thin var(--dark-800);
+	}
+
+	.check-button:focus{
+		border: solid 1px yellowgreen;
+		outline: solid 1px yellowgreen;
+		color: #010d00;
+	}
+
+	.check-all {
+		background-color: yellowgreen;
+		color: #000000;
+	}
+
+	.reset-button {
+		background-color: #ff5733;
+		color: var(--color-800);
+	}
 }

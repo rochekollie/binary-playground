@@ -1,211 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Binary Calculator</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=PT+Mono&display=swap"
-			rel="stylesheet">
-		<link rel="stylesheet" href="style.css">
-	</head>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Binary Calculator</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css"/>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
 
-	<body>
-		<header></header>
-		<main>
-			<div class="instructions">
-				<h1>Binary Calculator</h1>
-				<p>
-					You are given a decimal number to convert into binary. Press the
-					buttons to change their values so that the row represents the decimal
-					number on the left. When a <strong>1</strong> is used; we consider the
-					value to be <strong>ON</strong>. When a <strong>0</strong> is used; we
-					consider the value to be <strong>OFF</strong>.
-				</p>
-			</div>
-			<table id="binary-table">
-				<caption>Binary table</caption>
-				<thead>
-					<tr>
-						<th scope="col"></th>
-						<th scope="col">128</th>
-						<th scope="col">64</th>
-						<th scope="col">32</th>
-						<th scope="col">16</th>
-						<th scope="col">8</th>
-						<th scope="col">4</th>
-						<th scope="col">2</th>
-						<th scope="col">1</th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- row 1 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=PT+Mono&display=swap"
+      rel="stylesheet"/>
+  </head>
 
-					<!-- row 2 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+  <body>
+    <header></header>
+    <main>
+      <div class="instructions">
+        <h1>Binary Playground</h1>
+        <p>
+          You are given a decimal number to convert into binary.
+          Press the
+          buttons to change their values
+          so that the row represents the decimal
+          number on the left.
+          When a <strong>1</strong> is used; we consider the
+          value to be <strong>ON</strong>. When a <strong>0</strong> is used; we
+          consider the value to be <strong>OFF</strong>.
+        </p>
+      </div>
+      <table id="binary-table">
+        <caption>
+          Binary table
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" class="place-values">128</th>
+            <th scope="col" class="place-values">64</th>
+            <th scope="col" class="place-values">32</th>
+            <th scope="col" class="place-values">16</th>
+            <th scope="col" class="place-values">8</th>
+            <th scope="col" class="place-values">4</th>
+            <th scope="col" class="place-values">2</th>
+            <th scope="col" class="place-values">1</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 3 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 2 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 4 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 3 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 5 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 4 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 6 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 5 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 7 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 6 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 8 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 7 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 9 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
+          <!-- row 8 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-					<!-- row 10 -->
-					<tr>
-						<th class="decimal-numbers" scope="row"></th>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="binary-digits">0</button></td>
-						<td><button type="button" class="button check-button">Check</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+          <!-- row 9 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
 
-			<div class="button-container">
-				<button type="button" class="button check-all">Check All</button>
-				<button type="reset" class="button reset-button">Reset All</button>
-			</div>
+          <!-- row 10 -->
+          <tr>
+            <th class="decimal-numbers" scope="row"></th>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td><button type="button" class="binary-digits">0</button></td>
+            <td>
+              <button type="button" class="button check-button">Check</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-		</main>
-		<footer>
-
-		</footer>
-		<script src="script.js"></script>
-	</body>
+      <div class="button-container">
+        <button type="button" class="button check-all">Check All</button>
+        <button type="reset" class="button reset-button">Reset All</button>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
 
 </html>
